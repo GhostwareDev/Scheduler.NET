@@ -5,9 +5,13 @@ namespace Ghostware.Scheduler
 {
     public class Scheduler : Control
     {
-        public Scheduler()
+        #region Constructors
+
+        static Scheduler()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(Scheduler), new FrameworkPropertyMetadata(typeof(Scheduler)));
         }
+
+        #endregion
     }
 }

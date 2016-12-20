@@ -14,10 +14,14 @@ namespace Ghostware.Scheduler.Controls
 
         #endregion
 
-        public ScheduleLedger()
+        #region Constructors
+
+        static ScheduleLedger()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ScheduleLedger), new FrameworkPropertyMetadata(typeof(ScheduleLedger)));
         }
+
+        #endregion
 
         public override void OnApplyTemplate()
         {
@@ -33,13 +37,13 @@ namespace Ghostware.Scheduler.Controls
             if (_ledgerItems == null) return;
             for (var i = 0; i < 24; i++)
             {
-                //var item = new ScheduleLedgerItem
-                //{
-                //    TimeslotA = i.ToString(),
-                //    TimeslotB = "00"
-                //};
-                //item.SetBinding(StyleProperty, GetOwnerBinding("CalendarLedgerItemStyle"));
-                _ledgerItems.Children.Add(new ScheduleLedgerItem());
+                var item = new ScheduleLedgerItem
+                {
+                    TimeslotA = i.ToString(),
+                    TimeslotB = "00"
+                };
+                item.SetBinding(StyleProperty, GetOwnerBinding("CalendarLedgerItemStyle"));
+                _ledgerItems.Children.Add(item);
             }
         }
 

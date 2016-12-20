@@ -5,36 +5,36 @@ namespace Ghostware.Scheduler.Controls
 {
     public class ScheduleLedgerItem : Control
     {
-        public ScheduleLedgerItem()
+        #region Timeslots
+
+        public static readonly DependencyProperty TimeslotAProperty =
+            DependencyProperty.Register("TimeslotA", typeof(string), typeof(ScheduleLedgerItem),
+                new FrameworkPropertyMetadata(string.Empty));
+
+        public string TimeslotA
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(ScheduleLedgerItem), new FrameworkPropertyMetadata(typeof(ScheduleLedgerItem)));
+            get { return (string)GetValue(TimeslotAProperty); }
+            set { SetValue(TimeslotAProperty, value); }
         }
 
-        #region TimeslotA
+        public static readonly DependencyProperty TimeslotBProperty =
+            DependencyProperty.Register("TimeslotB", typeof(string), typeof(ScheduleLedgerItem),
+                new FrameworkPropertyMetadata(string.Empty));
 
-        //public static readonly DependencyProperty TimeslotAProperty =
-        //    DependencyProperty.Register("TimeslotA", typeof(string), typeof(ScheduleLedgerItem),
-        //        new FrameworkPropertyMetadata(string.Empty));
-
-        //public string TimeslotA
-        //{
-        //    get { return (string)GetValue(TimeslotAProperty); }
-        //    set { SetValue(TimeslotAProperty, value); }
-        //}
+        public string TimeslotB
+        {
+            get { return (string)GetValue(TimeslotBProperty); }
+            set { SetValue(TimeslotBProperty, value); }
+        }
 
         #endregion
 
-        #region TimeslotB
+        #region Constructors
 
-        //public static readonly DependencyProperty TimeslotBProperty =
-        //    DependencyProperty.Register("TimeslotB", typeof(string), typeof(ScheduleLedgerItem),
-        //        new FrameworkPropertyMetadata(string.Empty));
-
-        //public string TimeslotB
-        //{
-        //    get { return (string)GetValue(TimeslotBProperty); }
-        //    set { SetValue(TimeslotBProperty, value); }
-        //}
+        static ScheduleLedgerItem()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(ScheduleLedgerItem), new FrameworkPropertyMetadata(typeof(ScheduleLedgerItem)));
+        }
 
         #endregion
     }

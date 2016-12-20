@@ -5,9 +5,13 @@ namespace Ghostware.Scheduler.Controls
 {
     public class ScheduleHeader : Control
     {
-        public ScheduleHeader()
+        #region Constructors
+
+        static ScheduleHeader()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ScheduleHeader), new FrameworkPropertyMetadata(typeof(ScheduleHeader)));
         }
+
+        #endregion
     }
 }
