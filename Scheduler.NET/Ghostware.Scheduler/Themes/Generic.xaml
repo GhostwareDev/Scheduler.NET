@@ -1,4 +1,4 @@
-﻿<ResourceDictionary
+﻿ <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:Ghostware.Scheduler"
@@ -22,7 +22,7 @@
                             </Grid.RowDefinitions>
 
                             <Border BorderBrush="#6593CF" BorderThickness="0,0,1,1" Grid.Column="0" Grid.Row="0" />
-                            <controls:ScheduleHeader Grid.Column="1" Grid.Row="1" x:Name="PART_DayHeader"/>
+                            <controls:ScheduleHeader Grid.Column="1" Grid.Row="0" x:Name="PART_DayHeader"/>
                             <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="PART_ScrollViewer">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
@@ -46,7 +46,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:ScheduleHeader}">
                     <Border BorderBrush="#6593CF" BorderThickness="0,1,0,1" Background="#30000000">
-                        <TextBlock Text="Date should be here..." HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PART_DayHeaderLabel" />
+                        <TextBlock Text="{TemplateBinding DayHeader}" VerticalAlignment="Center" HorizontalAlignment="Center" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

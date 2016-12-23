@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="Controls\ScheduleHeader.cs" />
     <Compile Include="Controls\ScheduleLedger.cs" />
-    <Compile Include="Controls\ScheduleLedgerItemT.cs" />
+    <Compile Include="Controls\ScheduleLedgerItem.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
