@@ -42,12 +42,12 @@ namespace Ghostware.Scheduler.Controls
                     TimeslotA = i.ToString(),
                     TimeslotB = "00"
                 };
-                item.SetBinding(StyleProperty, GetOwnerBinding("CalendarLedgerItemStyle"));
+                item.SetBinding(StyleProperty, GetOwnerBinding("ScheduleLedgerItemStyle"));
                 _ledgerItems.Children.Add(item);
             }
         }
 
-        public Calendar Owner { get; set; }
+        public Scheduler Owner { get; set; }
 
         private BindingBase GetOwnerBinding(string propertyName)
         {

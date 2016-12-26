@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ghostware.Scheduler.Example"
         xmlns:scheduler="clr-namespace:Ghostware.Scheduler;assembly=Ghostware.Scheduler"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <scheduler:Scheduler Margin="5" />
     </Grid>

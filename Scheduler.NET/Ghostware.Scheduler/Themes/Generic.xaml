@@ -11,10 +11,9 @@
                     <Border Background="#E3EFFF"
                             BorderBrush="#6593CF"
                             BorderThickness="2,2,2,2">
-                        <Grid>
+                        <Grid x:Name="PART_SchedulerGrid">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50" />
-                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="22" />
@@ -22,12 +21,10 @@
                             </Grid.RowDefinitions>
 
                             <Border BorderBrush="#6593CF" BorderThickness="0,0,1,1" Grid.Column="0" Grid.Row="0" />
-                            <controls:ScheduleHeader Grid.Column="1" Grid.Row="0" x:Name="PART_DayHeader"/>
-                            <ScrollViewer Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="PART_ScrollViewer">
-                                <Grid>
+                            <ScrollViewer Grid.Row="1" Grid.Column="0" x:Name="PART_ScrollViewer">
+                                <Grid x:Name="PART_SchedulerItemGrid">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
 
                                     <controls:ScheduleLedger Grid.Column="0" x:Name="PART_Ledger"/>
