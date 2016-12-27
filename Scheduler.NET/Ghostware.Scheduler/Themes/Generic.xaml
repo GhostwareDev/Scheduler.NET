@@ -28,7 +28,6 @@
                                     </Grid.ColumnDefinitions>
 
                                     <controls:ScheduleLedger Grid.Column="0" x:Name="PART_Ledger"/>
-                                    <!--<local:CalendarDay Grid.Column="1" x:Name="PART_Day" />-->
                                 </Grid>
                             </ScrollViewer>
                         </Grid>
@@ -86,6 +85,31 @@
                             <TextBlock Text="{TemplateBinding TimeslotA}" Foreground="{TemplateBinding Foreground}" FontSize="16" Margin="0,3,0,0"/>
                             <TextBlock Text="{TemplateBinding TimeslotB}" Foreground="{TemplateBinding Foreground}"  Margin="1.5,0,0,0"/>
                         </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type controls:ScheduleDay}">
+        <!--<Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <local:TimeslotPanel />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ScheduleDay}">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <StackPanel x:Name="PART_TimeslotItems">
+                            </StackPanel>
+                            <ItemsPresenter />
+                        </Grid>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
