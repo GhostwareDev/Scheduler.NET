@@ -48,6 +48,8 @@
     <Compile Include="Controls\ScheduleHeader.cs" />
     <Compile Include="Controls\ScheduleLedger.cs" />
     <Compile Include="Controls\ScheduleLedgerItem.cs" />
+    <Compile Include="Controls\SchedulerTimeslotItem.cs" />
+    <Compile Include="Panels\TimeslotPanel.cs" />
     <Compile Include="Scheduler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
