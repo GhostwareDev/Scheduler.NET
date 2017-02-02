@@ -27,29 +27,27 @@ namespace Ghostware.Scheduler.Controls
 
         public void PopulateDay()
         {
-             if (_dayItems != null)
+            if (_dayItems == null) return;
+            _dayItems.Children.Clear();
+
+            var startTime = new DateTime(2016, 12, 30, 0, 0, 0);
+            for (var i = 0; i < 48; i++)
             {
-                _dayItems.Children.Clear();
-
-                var startTime = new DateTime(2016, 12, 30, 0, 0, 0);
-                for (int i = 0; i < 48; i++)
+                var timeslot = new SchedulerTimeslotItem
                 {
-                    var timeslot = new SchedulerTimeslotItem
-                    {
-                        StartTime = startTime,
-                        EndTime = startTime + TimeSpan.FromMinutes(30)
-                    };
+                    StartTime = startTime,
+                    EndTime = startTime + TimeSpan.FromMinutes(30)
+                };
 
-                    if (startTime.Hour >= 8 && startTime.Hour <= 17)
-                        timeslot.SetBinding(BackgroundProperty, GetOwnerBinding("PeakTimeslotBackground"));
-                    else
-                        timeslot.SetBinding(BackgroundProperty, GetOwnerBinding("OffPeakTimeslotBackground"));
+                if (startTime.Hour >= 8 && startTime.Hour <= 17)
+                    timeslot.SetBinding(BackgroundProperty, GetOwnerBinding("PeakTimeslotBackground"));
+                else
+                    timeslot.SetBinding(BackgroundProperty, GetOwnerBinding("OffPeakTimeslotBackground"));
 
-                    timeslot.SetBinding(StyleProperty, GetOwnerBinding("CalendarTimeslotItemStyle"));
-                    _dayItems.Children.Add(timeslot);
+                timeslot.SetBinding(StyleProperty, GetOwnerBinding("CalendarTimeslotItemStyle"));
+                _dayItems.Children.Add(timeslot);
 
-                    startTime = startTime + TimeSpan.FromMinutes(30);
-                }
+                startTime = startTime + TimeSpan.FromMinutes(30);
             }
             //if (Owner != null)
             //{
